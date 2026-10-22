@@ -1,0 +1,1037 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mughal Computer Center offers Digital Marketing, Graphic Designing, Web Development and CIT courses.">
+  <title>Mughal Computer Center | Future Starts Here</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #070912;
+      --panel: #101322;
+      --text: #f4f5ff;
+      --muted: #9ca3ba;
+      --blue: #6c7cff;
+      --cyan: #46e6ff;
+      --border: rgba(255,255,255,.09);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button, input, textarea, select {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1160px, 90%);
+      margin: auto;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(7,9,18,.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 78px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: -.5px;
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      color: white;
+      background: linear-gradient(135deg, var(--blue), #9b55ff);
+      box-shadow: 0 0 28px #6c7cff55;
+    }
+
+    .logo span:last-child {
+      color: var(--cyan);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 13px;
+      transition: .25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--cyan);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 23px;
+      border: 1px solid transparent;
+      border-radius: 9px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(110deg, var(--blue), #925bff);
+      color: white;
+      box-shadow: 0 0 25px #6c7cff30;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 35px #6c7cff70;
+    }
+
+    .btn-outline {
+      border-color: var(--border);
+      background: rgba(255,255,255,.025);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--cyan);
+    }
+
+    .hero {
+      min-height: 690px;
+      display: grid;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background-image:
+        linear-gradient(rgba(108,124,255,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(108,124,255,.045) 1px, transparent 1px);
+      background-size: 46px 46px;
+    }
+
+    .hero::before, .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 350px;
+      height: 350px;
+      background: #5848ff25;
+      top: 30px;
+      left: -100px;
+    }
+
+    .hero::after {
+      width: 400px;
+      height: 400px;
+      background: #00d9ff15;
+      right: -100px;
+      bottom: 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 55px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      padding: 80px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--cyan);
+      border: 1px solid #46e6ff30;
+      background: #46e6ff0b;
+      padding: 7px 13px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      background: var(--cyan);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--cyan);
+    }
+
+    h1 {
+      font-size: clamp(40px, 5.4vw, 69px);
+      line-height: 1.12;
+      letter-spacing: -3px;
+      margin: 25px 0;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, var(--cyan), #8982ff 70%, #bb8aff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-description {
+      max-width: 510px;
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .hero-note {
+      margin-top: 27px;
+      color: #7e88a3;
+      font-size: 11px;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 390px;
+      display: grid;
+      place-items: center;
+    }
+
+    .orb {
+      position: absolute;
+      width: 275px;
+      height: 275px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #788bff, #5245d8 35%, #15122f 70%);
+      box-shadow: 0 0 80px #655aff45, inset -15px -15px 40px #050611;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .orbit {
+      position: absolute;
+      width: 350px;
+      height: 130px;
+      border: 1px solid #7c8bff66;
+      border-radius: 50%;
+      transform: rotate(-30deg);
+    }
+
+    .orbit.two {
+      transform: rotate(55deg);
+      width: 320px;
+      height: 180px;
+      border-color: #46e6ff45;
+    }
+
+    .floating-card {
+      position: absolute;
+      padding: 15px 18px;
+      border: 1px solid #ffffff20;
+      border-radius: 14px;
+      background: rgba(15,19,38,.88);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 12px 45px #0005;
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .floating-card strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .floating-card small {
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .card-one {
+      top: 35px;
+      right: -5px;
+    }
+
+    .card-two {
+      bottom: 38px;
+      left: -10px;
+      animation-delay: -2s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-13px); }
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 48px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(29px, 4vw, 43px);
+      letter-spacing: -1.5px;
+      line-height: 1.2;
+      margin: 15px 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .course-card {
+      background: linear-gradient(145deg, #111526, #0b0d18);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 25px 21px;
+      transition: .3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .course-card:hover {
+      transform: translateY(-7px);
+      border-color: #737fff90;
+      box-shadow: 0 15px 45px #555cff12;
+    }
+
+    .course-icon {
+      width: 51px;
+      height: 51px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      font-size: 23px;
+      background: #747bff18;
+      border: 1px solid #747bff35;
+      margin-bottom: 22px;
+    }
+
+    .course-card h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .course-card p {
+      font-size: 12px;
+      color: var(--muted);
+      min-height: 65px;
+    }
+
+    .course-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: var(--cyan);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .about-visual {
+      min-height: 340px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at center, #554bff22, transparent 65%),
+        #0c1020;
+    }
+
+    .about-symbol {
+      font-size: 100px;
+      color: var(--cyan);
+      text-shadow: 0 0 45px #46e6ff80;
+    }
+
+    .about-grid h2 {
+      font-size: clamp(30px, 4vw, 43px);
+      line-height: 1.2;
+      letter-spacing: -1.5px;
+      margin: 17px 0;
+    }
+
+    .about-grid p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .feature {
+      display: flex;
+      gap: 12px;
+      margin: 15px 0;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    .feature span {
+      color: var(--cyan);
+    }
+
+    .admission {
+      background:
+        radial-gradient(ellipse at 15% 50%, #675bff18, transparent 45%),
+        #0b0e1b;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .admission-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .admission h2 {
+      font-size: clamp(32px, 4vw, 45px);
+      line-height: 1.2;
+      letter-spacing: -1px;
+      margin: 18px 0;
+    }
+
+    .admission p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .form-card {
+      padding: 30px;
+      border: 1px solid var(--border);
+      background: #111525;
+      border-radius: 17px;
+    }
+
+    .form-card h3 {
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      margin-bottom: 7px;
+      color: #c7cce0;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 13px;
+      color: white;
+      background: #090c17;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--blue);
+    }
+
+    .form-group select option {
+      background: #101322;
+    }
+
+    .form-card .btn {
+      width: 100%;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .contact-card {
+      text-align: center;
+      padding: 25px 15px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 13px;
+    }
+
+    .contact-card .course-icon {
+      margin: 0 auto 15px;
+    }
+
+    .contact-card h3 {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .contact-card p {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    footer p, footer a {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    footer a:hover {
+      color: var(--cyan);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 12px;
+      color: white;
+      background: var(--panel);
+      cursor: pointer;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 950px) {
+      .courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-grid {
+        gap: 20px;
+      }
+
+      .about-grid, .admission-grid {
+        gap: 35px;
+      }
+
+      .nav-links {
+        gap: 15px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-inner {
+        min-height: 70px;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        padding: 20px 5%;
+        background: #090b16;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        font-size: 14px;
+        padding: 5px 0;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-grid, .about-grid, .admission-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        padding: 75px 0 45px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero-visual {
+        min-height: 330px;
+      }
+
+      .orb {
+        width: 220px;
+        height: 220px;
+      }
+
+      .orbit {
+        width: 285px;
+        height: 110px;
+      }
+
+      .floating-card {
+        padding: 11px 13px;
+      }
+
+      .card-one {
+        right: 0;
+      }
+
+      .card-two {
+        left: 0;
+      }
+
+      .section {
+        padding: 70px 0;
+      }
+
+      .courses-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .course-card p {
+        min-height: auto;
+      }
+
+      .about-visual {
+        min-height: 260px;
+      }
+
+      .admission-grid {
+        gap: 30px;
+      }
+
+      .form-card {
+        padding: 22px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="logo" href="#home" aria-label="Mughal Computer Center home">
+        <span class="logo-icon">M</span>
+        <span>MUGHAL <span>COMPUTER</span></span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#admissions">Admissions</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="#admissions" class="btn btn-primary nav-cta">Join Us ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow"><span class="dot"></span> Your Digital Future Starts Here</div>
+
+          <h1>
+            Learn Skills.<br>
+            Build Your <span class="gradient-text">Future.</span>
+          </h1>
+
+          <p class="hero-description">
+            Welcome to Mughal Computer Center. Discover modern digital skills,
+            unlock your creativity, and prepare yourself for the opportunities
+            of tomorrow.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#courses" class="btn btn-primary">Explore Courses ↗</a>
+            <a href="#about" class="btn btn-outline">Discover Our Center</a>
+          </div>
+
+          <p class="hero-note">DIGITAL MARKETING · DESIGN · DEVELOPMENT · IT</p>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="Abstract futuristic digital illustration">
+          <div class="orbit"></div>
+          <div class="orbit two"></div>
+          <div class="orb"></div>
+
+          <div class="floating-card card-one">
+            <strong>✦ Digital Skills</strong>
+            <small>Learn. Create. Grow.</small>
+          </div>
+
+          <div class="floating-card card-two">
+            <strong>⌘ Future Ready</strong>
+            <small>Your journey begins here</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="courses">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="eyebrow">What You Can Learn</div>
+          <h2>Skills for the <span class="gradient-text">Digital Age</span></h2>
+          <p>Choose a learning path and start building your knowledge
+            with practical, career-focused computer courses.</p>
+        </div>
+
+        <div class="courses-grid">
+          <article class="course-card reveal">
+            <div class="course-icon">↗</div>
+            <h3>Digital Marketing</h3>
+            <p>Explore social media marketing, content creation, online advertising, and digital growth strategies.</p>
+            <a class="course-link" href="#admissions">Learn More ↗</a>
+          </article>
+
+          <article class="course-card reveal">
+            <div class="course-icon">✳</div>
+            <h3>Graphic Designing</h3>
+            <p>Develop visual communication skills and learn to create engaging digital designs and graphics.</p>
+            <a class="course-link" href="#admissions">Learn More ↗</a>
+          </article>
+
+          <article class="course-card reveal">
+            <div class="course-icon">⌘</div>
+            <h3>Web Development</h3>
+            <p>Discover how websites work and learn to build modern web experiences using coding fundamentals.</p>
+            <a class="course-link" href="#admissions">Learn More ↗</a>
+          </article>
+
+          <article class="course-card reveal">
+            <div class="course-icon">▦</div>
+            <h3>CIT</h3>
+            <p>Build computer fundamentals, office application skills, and essential information technology knowledge.</p>
+            <a class="course-link" href="#admissions">Learn More ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-visual reveal">
+          <div class="about-symbol">⌘</div>
+        </div>
+
+        <div class="reveal">
+          <div class="eyebrow">About Our Center</div>
+          <h2>Education for a <span class="gradient-text">Smarter Future</span></h2>
+
+          <p>
+            Mughal Computer Center is designed to help learners explore the
+            digital world through computer education and creative skills.
+            Our goal is to help students grow their knowledge and prepare
+            for a technology-driven future.
+          </p>
+
+          <div class="feature"><span>✦</span> Computer and digital skills learning</div>
+          <div class="feature"><span>✦</span> Creative and technical learning paths</div>
+          <div class="feature"><span>✦</span> Opportunities to develop practical projects</div>
+
+          <a href="#contact" class="btn btn-outline" style="margin-top:20px">
+            Get in Touch ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section admission" id="admissions">
+      <div class="container admission-grid">
+        <div class="reveal">
+          <div class="eyebrow">Admissions Open to Inquiry</div>
+          <h2>Your Next Chapter Starts <span class="gradient-text">Today.</span></h2>
+          <p>
+            Interested in joining Mughal Computer Center? Send an inquiry
+            about your preferred course. Our team can provide details about
+            admissions, fees, schedules, and course duration.
+          </p>
+        </div>
+
+        <form class="form-card reveal" id="admissionForm">
+          <h3>Course Inquiry</h3>
+
+          <div class="form-group">
+            <label for="studentName">Full Name</label>
+            <input id="studentName" name="name" type="text"
+              placeholder="Enter your name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="studentEmail">Email Address</label>
+            <input id="studentEmail" name="email" type="email"
+              placeholder="Enter your email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="studentPhone">Phone Number</label>
+            <input id="studentPhone" name="phone" type="tel"
+              placeholder="Enter your phone number" required>
+          </div>
+
+          <div class="form-group">
+            <label for="course">Select Your Course</label>
+            <select id="course" name="course" required>
+              <option value="">Choose a course</option>
+              <option>Digital Marketing</option>
+              <option>Graphic Designing</option>
+              <option>Web Development</option>
+              <option>CIT</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Your Message (Optional)</label>
+            <textarea id="message" name="message" rows="3"
+              placeholder="Ask us about a course..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit Inquiry ↗</button>
+          <p id="formMessage" role="status" style="margin-top:12px;font-size:12px"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="eyebrow">Contact Us</div>
+          <h2>Let's Start a <span class="gradient-text">Conversation</span></h2>
+          <p>Want to learn more? Contact Mughal Computer Center for course information.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card reveal">
+            <div class="course-icon">⌖</div>
+            <h3>Visit Our Center</h3>
+            <p>Contact us for the center's location and directions.</p>
+          </div>
+
+          <div class="contact-card reveal">
+            <div class="course-icon">✉</div>
+            <h3>Email Us</h3>
+            <p>Ask about courses and admissions.</p>
+          </div>
+
+          <div class="contact-card reveal">
+            <div class="course-icon">☎</div>
+            <h3>Call Us</h3>
+            <p>Get in touch for enrollment information.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a class="logo" href="#home">
+        <span class="logo-icon">M</span>
+        <span>MUGHAL <span>COMPUTER</span></span>
+      </a>
+
+      <p>© <span id="year"></span> Mughal Computer Center. All rights reserved.</p>
+
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.textContent = isOpen ? '✕' : '☰';
+    });
+
+    document.querySelectorAll('#navLinks a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.textContent = '☰';
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(element => {
+      revealObserver.observe(element);
+    });
+
+    document.getElementById('admissionForm').addEventListener('submit', event => {
+      event.preventDefault();
+
+      document.getElementById('formMessage').textContent =
+        'This demo form is not connected yet. Please connect a form service or backend to receive inquiries.';
+
+    });
+  </script>
+</body>
+</html>
